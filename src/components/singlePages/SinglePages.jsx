@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import SinglePageSlider from "./singlePageSlider/SinglePageSlider";
 import { useDispatch, useSelector } from "react-redux";
 import Side from "../sideContent/side/Side";
-import { deletePost } from "../../actions/PostsAction";
+import { deletePost } from "../../reduxACtions/actions/PostsAction";
 import Footer from "../footer/Footer";
 import AdsPromote from "../ads/AdsPromote";
 
@@ -64,7 +64,7 @@ const SinglePages = () => {
                             <section className="details" key={post.id}>
                                 <h1 className="title" style={{ textTransform: "uppercase" }}>{post.title}</h1>
                                 <div className="author">
-                                    <img src={PF + post.image} alt="" />
+                                    <img src={post.image.url} alt="" />
                                     <p style={{ textTransform: "capitalize" }}>By: {post.author}</p>
 
                                 </div>
@@ -92,7 +92,7 @@ const SinglePages = () => {
                                 </div>
 
                                 <div className="detailCover">
-                                    <img src={PF + post.image} alt="" className="cover" />
+                                    <img src={post.image.url} alt="" className="cover" />
                                     {post.imageDesc.length === 0 ? null : <div className="imageDesc">
                                         {post.imageDesc}
                                     </div>}

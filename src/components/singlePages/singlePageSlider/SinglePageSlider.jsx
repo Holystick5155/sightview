@@ -7,7 +7,7 @@ import "./singlePageSlider.css";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllPosts } from "../../../actions/PostsAction";
+import { getAllPosts } from "../../../reduxACtions/actions/PostsAction";
 
 const SinglePageSlider = () => {
 
@@ -62,7 +62,7 @@ const SinglePageSlider = () => {
             <div className='items' key={val._id}>
               <div className="box">
                 <div className="images">
-                  <img src={PF + val.image} alt="" />
+                  <img src={val.image.url} alt="" />
                 </div>
                 <div className="text row">
                   <Link to={`/posts/${val._id}`} style={{ textDecoration: 'none' }}>

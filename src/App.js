@@ -1,5 +1,4 @@
 import React, { createContext } from "react";
-import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Navbar from "./components/Header/Navbar";
@@ -18,15 +17,7 @@ function App() {
   const user = useSelector((state) => state.authReducer.authData);
 
   return (
-    <div
-      className="App"
-      style={{
-        height:
-          window.location.href === "http://localhost:3000/chat"
-            ? "calc(100vh - 2rem)"
-            : "auto",
-      }}
-    >
+    <div>
 
       <Navbar />
 

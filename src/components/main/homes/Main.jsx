@@ -13,8 +13,9 @@ const Main = () => {
 
   return (
     <>
-      <Hero />
+
       <main>
+        <Hero />
         <div className="container">
           <section className="mainContent">
             <Posts />

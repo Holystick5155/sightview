@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllPosts } from "../../../../actions/PostsAction";
+import { getAllPosts } from "../../../../reduxACtions/actions/PostsAction";
 import Heading from '../../../../components/heading/Heading';
 
 const Card = () => {
@@ -41,7 +41,7 @@ const Card = () => {
 
         <div className="box" key={item._id}>
           <div className="img">
-            <img src={PF + item.image} alt="" />
+            <img src={item.image.url} alt="" />
           </div>
           <div className="text">
             <span className="category">{item.category}</span>

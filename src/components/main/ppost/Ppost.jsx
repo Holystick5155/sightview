@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Heading from "../../heading/Heading";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllPosts } from "../../../actions/PostsAction";
+import { getAllPosts } from "../../../reduxACtions/actions/PostsAction";
 
 const Ppost = () => {
 
@@ -66,7 +66,7 @@ const Ppost = () => {
               <div className="ppbox shadow">
                 <div className="row">
                   <div className="ppimages">
-                    <img src={PF + val.image} alt="" />
+                    <img src={val.image.url} alt="" />
                   </div>
                   <div className="category category1">
                     <span>{val.category}</span>

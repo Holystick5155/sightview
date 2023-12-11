@@ -4,7 +4,7 @@ import Comment from "../../img/comment.png";
 import Share from "../../img/share.png";
 import Heart from "../../img/like.png";
 import NotLike from "../../img/notlike.png";
-import { likePost } from "../../api/PostsRequests";
+import { likePost } from "../../../reduxACtions/api/PostsRequests";
 import { useSelector } from "react-redux";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const Post = ({ data }) => {
   const [likes, setLikes] = useState(data.likes.length)
 
 
-  const serverPublic = "http://localhost:5022/images/";
+  //const serverPublic = "http://localhost:5022/images/";
 
   const handleLike = () => {
     likePost(data._id, user._id);

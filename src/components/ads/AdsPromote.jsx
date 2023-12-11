@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getAllPosts } from "../../actions/PostsAction";
+import { getAllPosts } from "../../reduxACtions/actions/PostsAction";
 import Heading from '../heading/Heading';
 
 

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
-import store from "./store/ReduxStore";
+import store from "./reduxACtions/store/ReduxStore";
 import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
 

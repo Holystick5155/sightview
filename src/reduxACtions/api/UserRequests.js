@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "https://apptesting-3dac2.web.app/api" });
+// const API = axios.create({ baseURL: 'https://us-central1-apptesting-3dac2.cloudfunctions.net/api' });
+
+const API = axios.create({ baseURL: 'https://us-central1-delviewsx.cloudfunctions.net/api' });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {

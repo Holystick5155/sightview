@@ -6,7 +6,6 @@ import axios from 'axios';
 
 const Card = () => {
 
-  const PF = "http://localhost:5030/images/";
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const Card = () => {
       {items.map(item => {
         <div className="box">
           <div className="img">
-            <img src={PF + item.photo} alt="" />
+            <img src={item.image.url} alt="" />
           </div>
           <div className="text">
             <span className="category">{item.cateory}</span>

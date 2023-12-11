@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Auth.css";
+import "../../App.css";
 import Logo from "../../img/logo.png";
-import { logIn, signUp } from "../../actions/AuthActions.js";
+import { logIn, signUp } from "../../reduxACtions/actions/AuthActions.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -54,8 +55,8 @@ const Auth = () => {
         {/* <img src={Logo} alt="" /> */}
 
         <div className="Webname">
-          <h1>iSight Africa</h1>
-          <h6>Get your daily sight in our News!</h6>
+          <h1>Delviews</h1>
+          <h6>Delve into our amazing stories daily!</h6>
         </div>
       </div>
 
@@ -72,7 +73,7 @@ const Auth = () => {
                 placeholder="First Name"
                 className="infoInput"
                 name="firstname"
-                value={data.firstname}
+                value={data.firstname.trim()}
                 onChange={handleChange}
               />
               <input
@@ -81,7 +82,7 @@ const Auth = () => {
                 placeholder="Last Name"
                 className="infoInput"
                 name="lastname"
-                value={data.lastname}
+                value={data.lastname.trim()}
                 onChange={handleChange}
               />
             </div>
@@ -94,7 +95,7 @@ const Auth = () => {
               placeholder="Username"
               className="infoInput"
               name="username"
-              value={data.username}
+              value={data.username.trim()}
               onChange={handleChange}
             />
           </div>
@@ -152,7 +153,7 @@ const Auth = () => {
               type="Submit"
               disabled={loading}
             >
-              {loading ? "Loading..." : isSignUp ? "SignUp" : "Login"}
+              {loading ? "Loading..." : isSignUp ? "Sign Up" : "Login"}
             </button>
           </div>
         </form>

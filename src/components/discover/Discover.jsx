@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getAllPosts } from "../../actions/PostsAction";
+import { getAllPosts } from "../../reduxACtions/actions/PostsAction";
 import Heading from '../heading/Heading';
 
 
@@ -69,7 +69,7 @@ const Discover = () => {
                         <div className="box" key={val._id}>
                             <Link to={`/posts/${val._id}`} style={{ textDecoration: 'none' }}>
                                 <div className="image">
-                                    <img src={PF + val.image} alt="" />
+                                    <img src={val.image.url} alt="" />
                                     <h1 className="title">{val.title.slice(0, 25)}...</h1>
                                 </div>
                             </Link>

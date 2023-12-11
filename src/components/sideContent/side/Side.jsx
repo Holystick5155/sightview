@@ -11,7 +11,7 @@ import Heading from '../../heading/Heading';
 
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllPosts } from "../../../actions/PostsAction";
+import { getAllPosts } from "../../../reduxACtions/actions/PostsAction";
 
 const Side = () => {
 
@@ -69,7 +69,7 @@ const Side = () => {
                 <img src="headerImage.jpg" alt="" />
             </section>
 
-            <Tpost />
+            {/* <Tpost /> */}
 
             <section className="categories" key={category}>
                 <Heading title="Categories" />
@@ -89,7 +89,7 @@ const Side = () => {
                     {posts.map((val) => {
                         return (
                             <div className="img" key={val._id}>
-                                <img src={PF + val.image} alt="" key={val._id} />
+                                <img src={val.image.url} alt="" key={val._id} />
                             </div>
                         )
 

@@ -1,5 +1,16 @@
 import * as PostsApi from "../api/PostsRequests";
 
+export const createPost = (data) => async (dispatch) => {
+  dispatch({ type: "UPLOAD_START" });
+  try {
+    const newPost = await PostsApi.createPost(data);
+    dispatch({ type: "UPLOAD_SUCCESS", data: newPost.data });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: "UPLOAD_FAIL" });
+  }
+};
+
 export const getTimelinePosts = (id) => async (dispatch) => {
   dispatch({ type: "RETREIVING_START" });
   try {

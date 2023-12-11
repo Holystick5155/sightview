@@ -23,12 +23,14 @@ export const NavbarStyle = makeStyles((theme) => ({
     color: "black",
     fontSize: "35px",
     textDecoration: "none",
-    '&::first-letter': {
-      textTransform: 'lowercase',
-    },
+    // '&::first-letter': {
+    //   textTransform: 'lowercase',
+    // },
   },
 
-
+  header: {
+    justifyContent: "space-between",
+  },
   //Nav items
   navLink: {
     textDecoration: "none",

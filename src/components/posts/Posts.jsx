@@ -6,13 +6,15 @@ import "./posts.css";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllPosts } from "../../actions/PostsAction";
+import { getAllPosts } from "../../reduxACtions/actions/PostsAction";
 import Heading from "../heading/Heading";
+import { useNavigate } from "react-router-dom";
+
 
 const Posts = () => {
-
   const params = useParams()
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.authReducer);
   let { posts, loading } = useSelector((state) => state.postReducer);
 
@@ -61,44 +63,54 @@ const Posts = () => {
     <>
 
       <section className="posts">
-        {posts ? <Heading title="General News" /> : " "}
+        {posts && posts.length > 0 ? <Heading title="General News" /> : " "}
 
         <Slider {...settings}>
+          {posts.length > 0 ? (
+            <>
+              {sorted.map((val) => (
 
-          {sorted.map((val) => (
-
-            <div className='items' key={val._id}>
-              <div className="box shadow">
-                <div className="row">
-                  <div className="images">
-                    <img src={PF + val.image} alt="" />
-                  </div>
-                  <div className="category category1">
-                    <span>{val.category}</span>
+                <div className='items' key={val._id}>
+                  <div className="box shadow">
+                    <div className="row">
+                      <div className="images">
+                        <img src={val.image.url} alt="" />
+                      </div>
+                      <div className="category category1">
+                        <span>{val.category}</span>
+                      </div>
+                    </div>
+                    <div className="text row">
+                      <Link to={`/posts/${val._id}`
+                      } style={{ textDecoration: 'none' }}>
+                        <h1 className="title" key={val._id}>
+                          {val.title}...
+                        </h1>
+                      </Link>
+                      <div className="desc">
+                        {/* {val.teaser.slice(0, 50)}... */}
+                      </div>
+                      <div className="date">
+                        {/* <i className="fa fa-calendar-day"></i> */}
+                        <label htmlFor="">{new Date(val.createdAt).toDateString()}</label>
+                      </div>
+                      <div className="comment">
+                        {/* <i className="fa fa-comment"></i> */}
+                        <label htmlFor=""> comment</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="text row">
-                  <Link to={`/posts/${val._id}`
-                  } style={{ textDecoration: 'none' }}>
-                    <h1 className="title" key={val._id}>
-                      {val.title}...
-                    </h1>
-                  </Link>
-                  <div className="desc">
-                    {/* {val.teaser.slice(0, 50)}... */}
-                  </div>
-                  <div className="date">
-                    {/* <i className="fa fa-calendar-day"></i> */}
-                    <label htmlFor="">{new Date(val.createdAt).toDateString()}</label>
-                  </div>
-                  <div className="comment">
-                    {/* <i className="fa fa-comment"></i> */}
-                    <label htmlFor=""> comment</label>
-                  </div>
-                </div>
-              </div>
+              ))}
+            </>
+          ) : (
+            <div>
+              <h3>No Stories Yet</h3>
+
+              {user && user.isAdmin === true && <button onClick={() => navigate("/addpost")}>Add Story...</button>}
             </div>
-          ))}
+          )}
+
         </Slider>
       </section>
 

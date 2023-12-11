@@ -65,7 +65,7 @@ const Computer = () => {
                     <div className="box shadow flexSB">
                       <div className="images">
                         <div className="img">
-                          <img src={PF + val.photo} alt="" />
+                          <img src={val.image.url} alt="" />
                         </div>
                         <div className="category category1">
                           <span>{val.category}</span>

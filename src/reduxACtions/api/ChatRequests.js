@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 
-const API = axios.create({ baseURL: 'https://apptesting-3dac2.web.app/api' });
+// const API = axios.create({ baseURL: 'https://us-central1-apptesting-3dac2.cloudfunctions.net/api' });
+
+const API = axios.create({ baseURL: 'https://us-central1-delviewsx.cloudfunctions.net/api' });
 
 export const createChat = (data) => API.post('/chat/', data);
 

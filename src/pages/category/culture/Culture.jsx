@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllPosts } from "../../../actions/PostsAction";
+import { getAllPosts } from "../../../reduxACtions/actions/PostsAction";
 import Hero from './hero/Hero';
 import Footer from '../../../components/footer/Footer';
 import Heading from '../../../components/heading/Heading';
@@ -76,7 +76,7 @@ const Culture = () => {
                                     <div className="box shadow">
                                         <div className="row">
                                             <div className="images">
-                                                <img src={PF + val.image} alt="" />
+                                                <img src={val.image.url} alt="" />
                                             </div>
                                             <div className="category category1">
                                                 <span>{val.category}</span>

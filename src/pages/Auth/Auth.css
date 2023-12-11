@@ -66,11 +66,70 @@
   justify-content: center;
 }
 
+/* Form Styling */
+.infoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.infoInput {
+  border: none;
+  outline: none;
+  background-color: rgba(40, 52, 62, 0.07);
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+}
+
+.infoForm>div {
+  display: flex;
+  gap: 1rem;
+  height: 2rem;
+  width: 90%;
+}
+
+.infoButton {
+  width: 6rem;
+  height: 2rem;
+  align-self: flex-end;
+}
+
 
 
 @media screen and (max-width: 768px) {
   .Auth {
     flex-direction: column;
     margin-top: 30px;
+    width: 100%;
   }
+
+  .infoForm {
+    width: 95%;
+  }
+
+  .infoInput {
+    padding: 10px;
+    height: 40px;
+    width: 45%;
+  }
+
+  .infoForm>div {
+    width: 90%;
+    gap: 10px;
+  }
+
+  .Webname>h1 {
+    font-size: 2rem;
+  }
+
+  .a-left {
+    gap: 1rem;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: -40px;
+  }
+
 }

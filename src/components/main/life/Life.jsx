@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getAllPosts } from "../../../actions/PostsAction";
+import { getAllPosts } from "../../../reduxACtions/actions/PostsAction";
 import Heading from '../../heading/Heading';
 
 
@@ -67,7 +67,7 @@ const Life = () => {
                     <section className="life" key={val._id}>
                         <div className="lifebox" key={val._id}>
                             <div className="lifeimage">
-                                <img src={PF + val.image} alt="" />
+                                <img src={val.image.url} alt="" />
                             </div>
                             <div className="text">
                                 <Link to={`/posts/${val._id}`} style={{ textDecoration: 'none' }}>
