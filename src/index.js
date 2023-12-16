@@ -6,6 +6,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import store from "./reduxACtions/store/ReduxStore";
 import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'crypto-browserify';
+import 'stream-browserify';
 
 import App from "./App";
 

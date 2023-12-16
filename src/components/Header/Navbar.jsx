@@ -46,7 +46,6 @@ const drawerWidth = 240;
 export default function Navbar({ searchPostData, handleSearchOnChange }) {
   const theme = useTheme();
   const [openNav, setOpenNav] = useState(false);
-  const navigate = useNavigation();
 
   const handleDrawerOpen = () => {
     setOpenNav(true);

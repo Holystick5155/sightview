@@ -1,8 +1,11 @@
 import axios from "axios";
+import dotenv from 'dotenv';
 
-// const API = axios.create({ baseURL: 'https://us-central1-apptesting-3dac2.cloudfunctions.net/api' });
+dotenv.config();
 
-const API = axios.create({ baseURL: 'https://us-central1-delviewsx.cloudfunctions.net/api' });
+// const API = axios.create({ baseURL: process.env.BASE_URL2 });
+
+const API = axios.create({ baseURL: process.env.BASE_URL });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {

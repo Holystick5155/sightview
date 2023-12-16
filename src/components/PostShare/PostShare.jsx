@@ -102,6 +102,7 @@ const PostShare = () => {
       teaser: teaser,
       desc: convertedContent,
       imageDesc: imageDesc,
+      parentCategory: parentCategory,
       category: category,
       tags: tags.split(',').map((tag) => tag.trim),
       authorPic: user.profilePicture,

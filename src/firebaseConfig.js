@@ -2,7 +2,9 @@
 
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
-//require('dotenv').config();
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 //import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -36,20 +38,15 @@ import { getStorage } from "firebase/storage";
 // };
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCWvYtEEqQEcf35jbbVjqthQOyboDqVu7Q",
-    authDomain: "delviewsx.firebaseapp.com",
-    databaseURL: "https://delviewsx.firebaseio.com",
-    projectId: "delviewsx",
-    storageBucket: "delviewsx.appspot.com",
-    messagingSenderId: "107992186512",
-    appId: "1:107992186512:web:a334ebc02cbeaeed852215",
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    projectId: process.env.PROJECTID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
 };
 
-
-
-// if (!firebase.apps.length) {
-//     firebase.initializeApp(firebaseConfig)
-// }
 
 
 // Initialize Firebase
@@ -58,40 +55,4 @@ const app = initializeApp(firebaseConfig);
 
 const storage = getStorage(app);
 export { app, storage };
-
-
-
-
-// // Import the functions you need from the SDKs you need
-// import firebase from 'firebase/compat/app';
-// import { initializeApp } from "firebase/app";
-// import 'firebase/compat/storage';
-
-// //import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// export const firebaseConfig = {
-//     apiKey: "AIzaSyDdB8m5d0koNZTfb6ISweNT7a8XM36RTXg",
-//     authDomain: "ilivemobile.firebaseapp.com",
-//     databaseURL: "https://ilivemobile.firebaseio.com",
-//     projectId: "ilivemobile",
-//     storageBucket: "ilivemobile.appspot.com",
-//     messagingSenderId: "866029169819",
-//     appId: "1:866029169819:web:df6595e6e44086e5efea3e",
-//     measurementId: "G-CL6W46JDNG"
-// };
-
-// if (!firebase.apps.length) {
-//     firebase.initializeApp(firebaseConfig)
-// }
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// //const analytics = getAnalytics(app);
-// export  {app, firebase};
-
-
 
